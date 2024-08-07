@@ -13,7 +13,7 @@
 :star: 最後帶入一些實際關於 RAG 的範例
 
 <!-- ![AI x ML x NLP](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_74a318e77203be0c94b02d5009719a43.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1722479034&Signature=z72N0W%2BM7Igm4NHnpOac65iUUQM%3D)來源：[inwedo - ML,NLP,LLM, and Deep Learning Explained Exploring the Bussiness Potential of AI](https://inwedo.com/blog/business-potential-of-ai-solutions/) -->
-![AI x ML x NLP](./src/AIxMLxNLP.png)來源：[inwedo - ML,NLP,LLM, and Deep Learning Explained Exploring the Bussiness Potential of AI](https://inwedo.com/blog/business-potential-of-ai-solutions/)
+![AI x ML x NLP](../src/AIxMLxNLP.png)來源：[inwedo - ML,NLP,LLM, and Deep Learning Explained Exploring the Bussiness Potential of AI](https://inwedo.com/blog/business-potential-of-ai-solutions/)
 
 ## :question: What is LLM
 :heavy_check_mark: 一個文字接龍的生成式模型
@@ -67,7 +67,7 @@
 :heavy_check_mark: 訓練成本低
 
 <!-- ![Basic RAG Structure](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_52a0ecd716a5283713470c0b68e471bf.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1722479237&Signature=azXOC%2BUYsJ3bsYjhiwSf3k8%2FGt4%3D) -->
-![Basic RAG Structure](./src/rag/basic_rag_structure.png)
+![Basic RAG Structure](../src/rag/basic_rag_structure.png)
 
 ## RAG 最基本的可以分成兩大部分
 
