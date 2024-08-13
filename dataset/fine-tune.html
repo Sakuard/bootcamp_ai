@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Fine-Tune</title>
+
+            <meta http-equiv="Content-Security-Policy" content="frame-src &#039;self&#039; https://*.draw.io https://*.youtube.com https://*.youtube-nocookie.com https://*.vimeo.com https://embed.diagrams.net; script-src http: https: &#039;nonce-OJ9WUwlnbNOKPwbeQZgqNz3b&#039; &#039;strict-dynamic&#039;; object-src &#039;self&#039;; base-uri &#039;self&#039;">
+    
+    <style>
+            ﻿:root{--font-body: -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Roboto, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;--font-code: Lucida Console, DejaVu Sans Mono, Ubuntu Mono, Monaco, monospace;--color-primary: #206ea7;--color-primary-light: rgba(32,110,167,0.15);--color-link: #206ea7;--color-page: #206ea7;--color-page-draft: #7e50b1;--color-chapter: #af4d0d;--color-book: #077b70;--color-bookshelf: #a94747;--color-positive: #0f7d15;--color-negative: #ab0f0e;--color-info: #0288D1;--color-warning: #cf4d03;--bg-disabled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='19' height='19' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(143)'%3E%3Crect width='100%25' height='100%25' fill='rgba(42, 67, 101,0)'/%3E%3Cpath d='M-10 30h60v20h-60zM-10-10h60v20h-60' fill='rgba(26, 32, 44,0)'/%3E%3Cpath d='M-10 10h60v20h-60zM-10-30h60v20h-60z' fill='rgba(0, 0, 0,0.05)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E")}:root.dark-mode{--bg-disabled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='19' height='19' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(143)'%3E%3Crect width='100%25' height='100%25' fill='rgba(42, 67, 101,0)'/%3E%3Cpath d='M-10 30h60v20h-60zM-10-10h60v20h-60' fill='rgba(26, 32, 44,0)'/%3E%3Cpath d='M-10 10h60v20h-60zM-10-30h60v20h-60z' fill='rgba(255, 255, 255,0.05)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E");color-scheme:only dark;--color-positive: #4aa850;--color-negative: #e85c5b;--color-warning: #de8a5a}:root:not(.dark-mode){color-scheme:only light}*{box-sizing:border-box;outline-color:var(--color-primary);outline-width:1px}*:focus{outline-style:dotted}html{height:100%;overflow-y:scroll;background-color:#f2f2f2}html.flexbox{overflow-y:hidden}html.dark-mode{background-color:#111}body{font-size:14px;line-height:1.6;color:#444;-webkit-font-smoothing:antialiased;height:100%;display:flex;flex-direction:column}html.dark-mode body{color:#aaa}body,button,input,select,label,textarea{font-family:var(--font-body)}pre,#markdown-editor-input,.text-mono,.code-base,span.code,code{font-family:var(--font-code)}h1{font-size:3.425em;line-height:1.22222222em;margin-top:.48888889em;margin-bottom:.48888889em}h2{font-size:2.8275em;line-height:1.294117647em;margin-top:.8627451em;margin-bottom:.43137255em}h3{font-size:2.333em;line-height:1.221428572em;margin-top:.78571429em;margin-bottom:.43137255em}h4{font-size:1.666em;line-height:1.375em;margin-top:.78571429em;margin-bottom:.43137255em}h1,h2,h3,h4,h5,h6{font-weight:400;position:relative;display:block;font-family:var(--font-heading, var(--font-body));color:#222}html.dark-mode h1,html.dark-mode h2,html.dark-mode h3,html.dark-mode h4,html.dark-mode h5,html.dark-mode h6{color:#bbb}h1 .subheader,h2 .subheader,h3 .subheader,h4 .subheader,h5 .subheader,h6 .subheader{font-size:.5em;line-height:1em;color:#969696}h5{font-size:1.4em}h5,h6{line-height:1.2em;margin-top:.78571429em;margin-bottom:.66em}@media screen and (max-width: 600px){h1{font-size:2.8275em}h2{font-size:2.333em}h3{font-size:1.666em}h4{font-size:1.333em}h5{font-size:1.161616em}}.list-heading{font-size:2rem}h2.list-heading{font-size:1.333rem}a{color:var(--color-link);fill:currentColor;cursor:pointer;text-decoration:none;transition:filter ease-in-out 80ms;line-height:1.6}a:hover{text-decoration:underline}a.icon{display:inline-block}a svg{position:relative;display:inline-block}a:focus img:only-child{outline:2px dashed var(--color-link);outline-offset:2px}a.no-link-style{color:inherit}a.no-link-style:hover{text-decoration:none}.blended-links a{color:inherit}.blended-links a svg{fill:currentColor}p,ul,ol,pre,table,blockquote{margin-top:.3em;margin-bottom:1.375em}hr{border:0;height:1px;background:#eaeaea;margin-bottom:24px}html.dark-mode hr{background:#555}hr.faded{background-image:linear-gradient(to right, #FFF, #e3e0e0 20%, #e3e0e0 80%, #FFF)}hr.darker{background:#ddd}html.dark-mode hr.darker{background:#666}hr.margin-top,hr.even{margin-top:24px}strong,b,.bold,.strong{font-weight:bold}strong>strong,strong>b,strong>.bold,strong>.strong,b>strong,b>b,b>.bold,b>.strong,.bold>strong,.bold>b,.bold>.bold,.bold>.strong,.strong>strong,.strong>b,.strong>.bold,.strong>.strong{font-weight:bolder}em,i,.italic{font-style:italic}small,p.small,span.small,.text-small{font-size:.75rem}sup,.superscript{vertical-align:super;font-size:.8em}sub,.subscript{vertical-align:sub;font-size:.8em}pre{font-size:12px;border:1px solid #ddd;background-color:#fff;border-color:#ddd;border-radius:4px;padding-left:26px;position:relative;padding-top:3px;padding-bottom:3px}html.dark-mode pre{background-color:#2b2b2b}html.dark-mode pre{border-color:#111}pre:before{content:"";display:block;position:absolute;top:0;width:22.4px;left:0;height:100%;background-color:#f5f5f5;border-right:1px solid #ddd}html.dark-mode pre:before{background-color:#313335}html.dark-mode pre:before{border-right:none}@media print{pre{padding-left:12px}pre:before{display:none}}blockquote{display:block;position:relative;border-left:4px solid rgba(0,0,0,0);border-left-color:var(--color-primary);background-color:#f8f8f8;padding:12px 16px 12px 32px;overflow:auto}html.dark-mode blockquote{background-color:#333}blockquote:before{content:"“";font-size:2em;font-weight:bold;position:absolute;top:12px;left:12px;color:#777}.text-mono{font-family:var(--font-code)}.text-uppercase{text-transform:uppercase}.text-capitals{text-transform:capitalize}.code-base,span.code,code{font-size:.84em;border:1px solid #ddd;border-radius:3px;background-color:#f8f8f8;border-color:#ddd}html.dark-mode .code-base,html.dark-mode span.code,html.dark-mode code{background-color:#2b2b2b}html.dark-mode .code-base,html.dark-mode span.code,html.dark-mode code{border-color:#444}code{display:inline;padding:1px 3px;white-space:pre-wrap;line-height:1.2em}span.code{padding:1px 6px}pre code{background-color:rgba(0,0,0,0);border:0;font-size:1em;display:block;line-height:1.6}span.highlight{font-weight:bold;padding:2px 4px}ul,ol{padding-left:32px;padding-right:32px;display:flow-root}ul p,ol p{margin:0}ul{list-style:disc}ul ul{list-style:circle}ul label{margin:0}ol{list-style:decimal}li>ol,li>ul{margin-top:0;margin-bottom:0;margin-block-end:0;margin-block-start:0;padding-block-end:0;padding-block-start:0;padding-left:19.2px;padding-right:19.2px}li.checkbox-item,li.task-list-item{display:list-item;list-style:none;margin-left:-19.2px}li.checkbox-item input[type=checkbox],li.task-list-item input[type=checkbox]{margin-right:6px}li.checkbox-item li.checkbox-item,li.checkbox-item li.task-list-item,li.task-list-item li.checkbox-item,li.task-list-item li.task-list-item{margin-left:6px}.underlined{text-decoration:underline}.text-center{text-align:center}.text-left{text-align:start}.text-right{text-align:end}@media screen and (min-width: 360px){.text-xxs-center{text-align:center}.text-xxs-left{text-align:start}.text-xxs-right{text-align:end}}@media screen and (min-width: 400px){.text-xs-center{text-align:center}.text-xs-left{text-align:start}.text-xs-right{text-align:end}}@media screen and (min-width: 600px){.text-s-center{text-align:center}.text-s-left{text-align:start}.text-s-right{text-align:end}}@media screen and (min-width: 880px){.text-m-center{text-align:center}.text-m-left{text-align:start}.text-m-right{text-align:end}}@media screen and (min-width: 1000px){.text-l-center{text-align:center}.text-l-left{text-align:start}.text-l-right{text-align:end}}@media screen and (min-width: 1100px){.text-xl-center{text-align:center}.text-xl-left{text-align:start}.text-xl-right{text-align:end}}.text-bigger{font-size:1.1em}.text-large{font-size:1.6666em}.no-color{color:inherit}.break-text{word-wrap:break-word;overflow-wrap:break-word}.text-limit-lines-1{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.text-limit-lines-2{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}.header-group{margin:16px 0}.header-group h1,.header-group h2,.header-group h3,.header-group h4,.header-group h5,.header-group h6{margin:0}span.sep{color:#bbb;padding:0 6px}.list>*{display:block}.svg-icon{width:1em;height:1em;display:inline-block;position:relative;bottom:-0.105em;margin-inline-end:6px;pointer-events:none;fill:currentColor}table{min-width:100px;max-width:100%}table thead{background-color:#f8f8f8;font-weight:500}html.dark-mode table thead{background-color:#333}table td,table th{min-width:10px;padding:6px 8px;border:1px solid #ddd;overflow:auto;line-height:1.2;word-break:break-word;vertical-align:top}table td p,table th p{margin:0}table.table{width:100%}table.table tr td,table.table tr th{border-bottom:1px solid rgba(0,0,0,.05)}table.table th,table.table td{text-align:start;border:none;padding:12px 12px;vertical-align:middle;margin:0;overflow:visible}table.table th{font-weight:bold}table.table tr:hover{background-color:#f2f2f2}html.dark-mode table.table tr:hover{background-color:#333}table.table .text-right{text-align:end}table.table .text-center{text-align:center}table.table td.actions{overflow:visible}table.table a{display:inline-block}table.table.expand-to-padding{margin-left:-12px;margin-right:-12px;width:calc(100% + (2*12px));max-width:calc(100% + (2*12px))}table.no-style td{border:0;padding:0}table.list-table{margin:0 -6px}table.list-table td{border:0;vertical-align:middle;padding:6px}.page-content{width:100%;max-width:840px;margin:0 auto;overflow-wrap:break-word}.page-content .align-left{text-align:left}.page-content img.align-left,.page-content table.align-left{float:left !important;margin:6px 16px 16px 0}.page-content .align-right{text-align:right !important}.page-content img.align-right,.page-content table.align-right{float:right !important;margin:6px 0 6px 12px}.page-content .align-center{text-align:center}.page-content img.align-center{display:block}.page-content img.align-center,.page-content table.align-center{margin-left:auto;margin-right:auto}.page-content img{max-width:100%;height:auto}.page-content h1,.page-content h2,.page-content h3,.page-content h4,.page-content h5,.page-content h6,.page-content pre{clear:left}.page-content hr{clear:both;margin:16px 0}.page-content table{hyphens:auto;table-layout:fixed;max-width:100%;height:auto !important}.page-content ins,.page-content del{text-decoration:none}.page-content ins{background:#dbffdb}.page-content del{background:#ffecec}.page-content details{border:1px solid;border-color:#ddd;margin-bottom:1em;padding:12px}html.dark-mode .page-content details{border-color:#555}.page-content details>summary{margin-top:-12px;margin-left:-12px;margin-right:-12px;margin-bottom:-12px;font-weight:bold;background-color:#eee;padding:6px 12px}html.dark-mode .page-content details>summary{background-color:#333}.page-content details[open]>summary{margin-bottom:12px;border-bottom:1px solid;border-color:#ddd}html.dark-mode .page-content details[open]>summary{border-color:#555}.page-content details>summary+*{margin-top:.2em}.page-content details:after{content:"";display:block;clear:both}.page-content li>input[type=checkbox]{vertical-align:top;margin-top:.3em}.page-content p:empty{min-height:1.6em}.page-content.page-revision pre code{white-space:pre-wrap}.page-content .cm-editor{margin-bottom:1.375em}.page-content video{max-width:100%}.callout{border-left:3px solid #bbb;background-color:#eee;padding:12px 12px 12px 32px;display:block;position:relative;overflow:auto}.callout:before{background-image:url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9IiMwMTUzODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+ICAgIDxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz4gICAgPHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTEgMTVoLTJ2LTZoMnY2em0wLThoLTJWN2gydjJ6Ii8+PC9zdmc+");background-repeat:no-repeat;content:"";width:1.2em;height:1.2em;left:8px;top:50%;margin-top:-9px;display:inline-block;position:absolute;line-height:1;opacity:.8}.callout.success{border-left-color:#0f7d15;background-color:#eafdeb;color:#063409}html.dark-mode .callout.success{border-left-color:#4aa850}html.dark-mode .callout.success{background-color:#122913}html.dark-mode .callout.success{color:#4aa850}.callout.success:before{background-image:url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9IiMzNzZjMzkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+ICAgIDxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz4gICAgPHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01LTUgMS40MS0xLjQxTDEwIDE0LjE3bDcuNTktNy41OUwxOSA4bC05IDl6Ii8+PC9zdmc+")}.callout.danger{border-left-color:#ab0f0e;background-color:#fcdbdb;color:#4d0706}html.dark-mode .callout.danger{border-left-color:#e85c5b}html.dark-mode .callout.danger{background-color:#250505}html.dark-mode .callout.danger{color:#e85c5b}.callout.danger:before{background-image:url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9IiNiOTE4MTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+ICAgIDxwYXRoIGQ9Ik0xNS43MyAzSDguMjdMMyA4LjI3djcuNDZMOC4yNyAyMWg3LjQ2TDIxIDE1LjczVjguMjdMMTUuNzMgM3pNMTIgMTcuM2MtLjcyIDAtMS4zLS41OC0xLjMtMS4zIDAtLjcyLjU4LTEuMyAxLjMtMS4zLjcyIDAgMS4zLjU4IDEuMyAxLjMgMCAuNzItLjU4IDEuMy0xLjMgMS4zem0xLTQuM2gtMlY3aDJ2NnoiLz4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==")}.callout.info{border-left-color:#0288d1;color:#01466c;background-color:#d3efff}html.dark-mode .callout.info{border-left-color:#0288d1}html.dark-mode .callout.info{color:#0288d1}html.dark-mode .callout.info{background-color:#001825}.callout.warning{border-left-color:#cf4d03;background-color:#fee3d3;color:#6a2802}html.dark-mode .callout.warning{border-left-color:#de8a5a}html.dark-mode .callout.warning{background-color:#30170a}html.dark-mode .callout.warning{color:#de8a5a}.callout.warning:before{background-image:url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9IiNiNjUzMWMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+ICAgIDxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz4gICAgPHBhdGggZD0iTTEgMjFoMjJMMTIgMiAxIDIxem0xMi0zaC0ydi0yaDJ2MnptMC00aC0ydi00aDJ2NHoiLz48L3N2Zz4=")}.callout a{color:inherit;text-decoration:underline}html,body{background-color:#fff}body{font-family:"DejaVu Sans",-apple-system,BlinkMacSystemFont,"Segoe UI","Oxygen","Ubuntu","Roboto","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;margin:0;padding:0;display:block}table{border-spacing:0;border-collapse:collapse}.page-content{overflow:hidden}pre{padding-left:12px}pre:before{display:none}pre code{white-space:pre-wrap}.page-break{page-break-after:always}@media screen{.page-break{border-top:1px solid #ddd}}ul.contents ul li{list-style:circle}.chapter-hint{color:#888;margin-top:32px}.chapter-hint+h1{margin-top:0}body.export-format-pdf{font-size:14px;line-height:1.2}body.export-format-pdf h1,body.export-format-pdf h2,body.export-format-pdf h3,body.export-format-pdf h4,body.export-format-pdf h5,body.export-format-pdf h6{line-height:1.2}body.export-format-pdf table{max-width:800px !important;font-size:.8em;width:100% !important}body.export-format-pdf table td{width:auto !important}body.export-format-pdf .page-content .float{float:none !important}body.export-format-pdf .page-content img.align-left,body.export-format-pdf .page-content img.align-right{float:none !important;clear:both;display:block}body.export-format-pdf.export-engine-dompdf .page-content a>img{max-width:700px}body.export-format-pdf.export-engine-dompdf .page-content td a>img{max-width:100%}/*# sourceMappingURL=export-styles.css.map */
+
+    </style>
+
+
+    <!-- Custom user content -->
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<style>
+body, button, input, select, label, textarea {
+  font-family: 'Lato', sans-serif;
+}
+.Codemirror, pre, #markdown-editor-input, .editor-toolbar, .code-base {
+  font-family: monospace;
+}
+.page-content {
+        font-size: 1.2em;
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/theme/cobalt.min.css">
+
+<!-- End custom user content -->
+</head>
+<body class="export export-format-html export-engine-none">
+<div class="page-content">
+        <div dir="auto">
+
+    <h1 class="break-text" id="bkmrk-page-title">Fine-Tune</h1>
+
+    <div style="clear:left;"></div>
+
+            <h4 id="bkmrk-%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%AA%BF%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B">模型微調工作流程</h4>
+<ol id="bkmrk-%E6%BA%96%E5%82%99%E8%B3%87%E6%96%99%E9%9B%86-%E6%BA%96%E5%82%99%E5%9F%BA%E7%A4%8E%E6%A8%A1%E5%9E%8B-%E5%8C%AF%E5%85%A5%E8%B3%87%E6%96%99%E9%9B%86-%E9%96%8B">
+<li class="null">準備資料集(訓練資料)</li>
+<li class="null">準備基礎模型</li>
+<li class="null">匯入資料集</li>
+<li class="null">開始微調作業 (Fine-Tune)</li>
+<li class="null">評估新模型損失曲線</li>
+<li class="null">以新模型做實際推論</li>
+</ol>
+<h4 id="bkmrk-%E6%BA%96%E5%82%99%E8%B3%87%E6%96%99%E9%9B%86">準備資料集</h4>
+<p id="bkmrk-%E9%96%8B%E5%A7%8B%E8%AA%BF%E6%95%B4%E6%A8%A1%E5%9E%8B%E4%B9%8B%E5%89%8D%EF%BC%8C%E6%82%A8%E5%BF%85%E9%A0%88%E5%85%88%E5%BB%BA%E7%AB%8B%E7%94%A8%E4%BE%86%E8%AA%BF%E6%95%B4%E6%A8%A1">開始微調模型之前，您必須先建立用來微調模型的資料集。為獲得最佳效能，資料集內的範例必須具有高品質、多元且代表真實輸入和輸出的要素。</p>
+<h5 id="bkmrk-%E6%A0%BC%E5%BC%8F">格式</h5>
+<p id="bkmrk-%E8%B3%87%E6%96%99%E9%9B%86%E4%B8%AD%E5%8C%85%E5%90%AB%E7%9A%84%E7%AF%84%E4%BE%8B%E6%87%89%E7%AC%A6%E5%90%88%E6%82%A8%E9%A0%90%E6%9C%9F%E7%9A%84%E5%AF%A6%E9%9A%9B%E5%B7%A5%E4%BD%9C">資料集中包含的範例應符合您預期的實際工作環境流量。如果您的資料集含有特定格式、關鍵字、操作說明或資訊，則實際工作環境資料的格式應相同，並含有相同的指示。 例如，如果資料集中的範例包含 "<code>question:</code>" 和 "<code>context:</code>"，則實際工作環境流量也應一併設定包含 "<code>question:</code>" 和 "<code>context:</code>" 的格式，且順序應與資料集範例中的順序相同。如果您排除結構定義，即使資料集的範例包含確切的問題，模型將無法辨識模式。</p>
+<p id="bkmrk-%E5%9C%A8%E8%B3%87%E6%96%99%E9%9B%86%E4%B8%AD%E7%9A%84%E6%AF%8F%E5%80%8B%E7%AF%84%E4%BE%8B%E4%B8%AD%E5%8A%A0%E5%85%A5%E6%8F%90%E7%A4%BA%E6%88%96%E5%89%8D%E7%BD%AE%E7%A2%BC%EF%BC%8C">在資料集中的每個範例中加入提示或前置碼，也有助於改善調整後模型的效能。請注意，如果資料集中包含提示或前置碼，那麼在推論時向已調整的模型發出提示時，也應包含該提示或前置碼。</p>
+<ul id="bkmrk-yt%3Afintune-falcon-mo">
+<li class="null">YT: <a href='https://osslab.tw/"okay,%20but%20I%20want%20GPT%20to%20perform%2010x%20for%20my%20specific%20use%20case"%20-%20Here%20is%20how%20-%20YouTube%20https:/www.youtube.com/watch?v=Q9zv369Ggfk' target="_blank" rel="noopener">Fintune Falcon Model</a></li>
+<li class="null"><a href="https://github.com/pengxiao-song/LaWGPT" target="_blank" rel="noopener">LaWGPT</a> - 微調具中文法律(中國)知識的大語言模型</li>
+</ul>
+<p id="bkmrk-%C2%A0-1"></p>
+<h4 id="bkmrk-tools">Tools &amp; Platform</h4>
+<h5 id="bkmrk-platforms">Unsloth</h5>
+<p id="bkmrk-unsloth---easily-fin"><a href="https://unsloth.ai/" target="_blank" rel="noopener">Unsloth</a> - Easily finetune &amp; train LLMs</p>
+<p id="bkmrk-%E5%BE%AE%E8%AA%BF%E6%A8%A1%E5%9E%8B%E5%B0%88%E7%94%A8%E7%9A%84-python-%E5%87%BD%E5%BC%8F%E5%BA%AB%EF%BC%8C%E5%9C%A8">微調模型專用的 Python 函式庫，在地端使用 GPU 資源對各種 Open Source 模型進行微調作業。</p>
+<ul id="bkmrk-github%3A-https%3A%2F%2Fgith">
+<li class="null">GitHub: <a href="https://github.com/unslothai/unsloth">https://github.com/unslothai/unsloth</a> </li>
+<li class="null">YT: <a href="https://www.youtube.com/watch?v=LPmI-Ok5fUc">https://www.youtube.com/watch?v=LPmI-Ok5fUc</a> </li>
+<li class="null">YT: <a href="https://www.youtube.com/watch?v=trxjlPSc3uk" target="_blank" rel="noopener">最新Mistral V3模型，免費微調模型 勞基法實作 #ai #llm #mistral #mistral7b #finetune #人工智能 #人工智慧 #nlp #embedding - YouTube</a></li>
+<li class="null">Colab: <a href="https://docs.unsloth.ai/tutorials/how-to-finetune-llama-3-and-export-to-ollama" target="_blank" rel="noopener">How to Finetune Llama-3 and Export to Ollama | Unsloth Docs</a></li>
+<li class="null">Colab: <a href="https://gathnex.medium.com/fine-tuning-llama-2-llm-on-google-colab-a-step-by-step-guide-dd79a788ac16" target="_blank" rel="noopener">Fine-Tuning Llama-2 LLM on Google Colab: A Step-by-Step Guide. | by Gathnex | Medium</a></li>
+</ul>
+<h5 id="bkmrk-atlas">Atlas</h5>
+<p id="bkmrk-atlas-by-nomic---%E8%B3%87%E6%96%99%E9%9B%86"><a href="https://atlas.nomic.ai/">Atlas by NOMIC</a> - 資料集（非結構化資料）品質檢測服務</p>
+<h5 id="bkmrk-anythingllm">AnythingLLM</h5>
+<p id="bkmrk-%E5%85%B7%E6%9C%89-chat%2Ffine-tune%2Fmu">具有 Chat/Fine-Tune/Multi-Model 多功能的平台</p>
+<ul id="bkmrk-%E5%A4%A7%E5%9E%8B%E8%AA%9E%E8%A8%80%E6%A8%A1%E5%9E%8Bllms%E4%BB%8B%E7%B4%B9%E8%88%87%E6%93%8D%E4%BD%9C%E6%95%99%E5%AD%B8-20">
+<li class="null"><a href="https://www.youtube.com/watch?v=Y0OrawaP1Aw&amp;t=6560s" target="_blank" rel="noopener">大型語言模型LLMs介紹與操作教學 20231228 - YouTube</a></li>
+</ul>
+<h5 id="bkmrk-llama-factory">LLaMA-Factory</h5>
+<ul id="bkmrk-github%3A-https%3A%2F%2Fgith-1">
+<li class="null">GitHub: <a href="https://github.com/hiyouga/LLaMA-Factory">https://github.com/hiyouga/LLaMA-Factory</a></li>
+<li class="null">YT: <a href="https://www.youtube.com/watch?v=tarOnTrGRBw" target="_blank" rel="noopener">Llama3 中文版模型微调笔记，小白也能学会 - YouTube</a> </li>
+<li class="null">YT: <a href="https://www.youtube.com/watch?v=tihBvGnAuzw" target="_blank" rel="noopener">【LLaMA-Factory】開源語言模型微調專案　方便微調各種大型語言模型｜內建WebUI　方便使用｜內建多種訓練方式讓使用者選擇 - YouTube</a></li>
+</ul>
+<h5 id="bkmrk-outlines">outlines</h5>
+<p id="bkmrk-%E7%94%9F%E6%88%90%E7%B5%90%E6%A7%8B%E5%8C%96%E6%96%87%E5%AD%97%E8%B3%87%E6%96%99%E3%80%82%E5%8F%AF%E7%94%A8%E6%96%BC%E5%BE%AE%E8%AA%BF%E6%A8%A1%E5%9E%8B%E5%89%8D%E7%9A%84%E8%B3%87">生成結構化文字資料。可用於微調模型前的資料集預處理。</p>
+<ul id="bkmrk-github%3A-https%3A%2F%2Fgith-2">
+<li class="null">GitHub: <a href="https://github.com/outlines-dev/outlines" target="_blank" rel="noopener">https://github.com/outlines-dev/outlines</a> </li>
+</ul>
+<p id="bkmrk-"></p>
+<h4 id="bkmrk-model">Models</h4>
+<h5 id="bkmrk-gemini-pro">Gemini-Pro</h5>
+<p id="bkmrk-%E8%A6%81%E5%BE%AE%E8%AA%BF-gemini-pro-%E6%A8%A1%E5%9E%8B%EF%BC%8C%E6%9C%89%E4%B8%89">要微調 Gemini-Pro 模型，有三種不同方式呼叫 Gemini API 來做微調作業，<a href="https://ai.google.dev/gemini-api/docs/model-tuning/ai-studio" target="_blank" rel="noopener">Google AI Studio</a>、<a href="https://ai.google.dev/gemini-api/docs/model-tuning/python" target="_blank" rel="noopener">Python SDK</a>、<a href="https://ai.google.dev/gemini-api/docs/model-tuning/rest" target="_blank" rel="noopener">REST API (curl)</a>。</p>
+<ul id="bkmrk-%E6%A8%A1%E5%9E%8B%E8%AA%BF%E6%95%B4%E7%B0%A1%E4%BB%8B-%C2%A0%7C%C2%A0-google-ai">
+<li class="null"><a href="https://ai.google.dev/gemini-api/docs/model-tuning?hl=zh-tw" target="_blank" rel="noopener">模型調整簡介  |  Google AI for Developers  |  Google for Developers</a></li>
+</ul>
+<h5 id="bkmrk-mistral">Mistral</h5>
+<p id="bkmrk-%E5%AE%98%E6%96%B9-mistral-ai-%E6%8E%A8%E5%87%BA%E5%BE%AE%E8%AA%BF%E7%94%A8-">官方 <a href="https://mistral.ai/news/customization/" target="_blank" rel="noopener">Mistral AI</a> 推出微調用 SDK 與 API。</p>
+<ul id="bkmrk-%C2%A0github%3A-mistralai%2Fm">
+<li class="null"> GitHub: <a href="https://github.com/mistralai/mistral-finetune" target="_blank" rel="noopener">mistralai/mistral-finetune (github.com)</a></li>
+<li class="null"><a href="https://www.ithome.com.tw/news/163353" target="_blank" rel="noopener">Mistral公布模型微調API、SDK、企業服務 | iThome</a></li>
+</ul>
+<p id="bkmrk-%C2%A0-2"></p>
+<p id="bkmrk--2"></p>
+<p id="bkmrk--3"></p>
+    </div>
+    <hr>
+
+    <div class="text-muted text-small">
+        <div class="entity-meta">
+            <svg class="svg-icon" data-icon="history" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+</svg>修訂版本 #26 <br>
+    
+    <svg class="svg-icon" data-icon="star" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>由 Admin 建立於 4 五月 2024 10:37:48
+    <br>
+
+    <svg class="svg-icon" data-icon="edit" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>由 Admin 更新於 18 七月 2024 17:22:30
+</div>    </div>
+</div>
+</body>
+</html>

@@ -2,3 +2,4 @@ venv/
 .ipynb_checkpoints/
 .DS_Store
 .vscode/
+db/*
